@@ -7,13 +7,29 @@ const url: string = 'http://localhost:8080/Users/'
 
 @Injectable()
 export class UserService { //p131
-    
-    list(): Observable <User[]> { //p132
-     return this.http.get(url+"List") as Observable <User[]>;
-        
+ 
+//add the RESTFULL method (add, remove, edit, delete) as in the Java Controller
+list(): Observable <User[]> { //p132
+     return this.http.get(url+"List") as Observable <User[]>;     
     }
-
-
+    
+create(user: User): Observable <any> {
+    console.log("usersvc.create...")
+    return this.http.post(url+"Add", user) as Observable <any>;
+}
+    
+get(id): Observable<User[]> {
+    return this.http.get(url+"Get?id="+id) as Observable<User[]>;
+  }
+  
+remove(id): Observable<any> {
+      return this.http.get(url+"Remove?id="+id) as Observable<any>;
+  }
+  
+change(user: User): Observable<any> {
+		return this.http.post(url+"Change", user) as Observable<any>;
+  }
+  
   constructor(private http: HttpClient) { } //p133
 
 }

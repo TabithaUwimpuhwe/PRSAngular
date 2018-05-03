@@ -1,3 +1,29 @@
-<p>
-  user-list works!
-</p>
+<app-menu></app-menu> 
+<!-- brough in from the app.component.html-->
+<div class='component-content'>
+    <div class='lefthalf'>
+    <span class='component-title'>[{{title}}]</span>
+    <span><a routerLink='/user/create'>
+        <img id='createnew' width='20' height='20' src='assets/add-icon.png' title='Add New'></a></span>
+    </div>
+</div>
+
+<p *ngIf='!users'>Loading ...</p>
+
+<table class="table table-sm" *ngIf='users'> 
+<!--the entire table tags - above is bootstrap to separate the below list-->
+<tr>
+    <td>ID</td> <td>UserName</td><td>First Name</td> <td>Last Name</td> <td>Phone Number</td> <td>Email</td><td>Privilege</td> <td>Action</td>
+</tr>
+
+<tr *ngFor='let user of users'>
+<!--   for every user of users list, I want table raw (tr) prinited to the screen-->
+   <td>{{user.Id}} </td> <td>{{user.UserName}} </td> 
+    <td>{{user.Password}} </td> <td>{{user.FirstName}} </td> <td>{{user.LastName}} </td> <td>{{user.PhoneNumber}} </td><td>{{user.Email}} </td> <td>{{user.Reviewer}} </td><td>{{user.Admin}} </td> 
+    <td class='actions'></td>
+    <a routerLink='/user/detail/{{user.Id}}'><img src='assets/details.png' width='20' height='20' title='Detail'></a> 
+    <a routerLink='/user/edit/{{user.Id}}'><img src='assets/pencil-icon.png' width='20' height='20' title='Edit'></a>
+</tr>
+</table>
+
+

@@ -16,8 +16,9 @@ export class UserListComponent implements OnInit {
   constructor(private userSvc: UserService) { }
 
   ngOnInit() { //p136 populate list of users
-      
-    this.userSvc.list().subscribe(userSvcList =>{
+     
+    //connecting to the back end user table in Eclipse/MySQL
+    this.userSvc.list().subscribe(userSvcList =>{ 
                         console.log(userSvcList);
                         this.users = userSvcList;
     });
