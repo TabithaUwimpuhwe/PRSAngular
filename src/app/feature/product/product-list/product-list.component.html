@@ -1,0 +1,29 @@
+<app-menu></app-menu> 
+<!-- brough in from the app.component.html-->
+<div class='component-content'>
+    <div class='lefthalf'>
+    <span class='component-title'>[{{title}}]</span>
+    <span><a routerLink='/product/create'>
+        <img id='createnew' width='20' height='20' src='assets/add-icon.png' title='Add New'></a></span>
+    </div>
+</div>
+
+<p *ngIf='!products'>Loading ...</p>
+
+<table class="table table-sm" *ngIf='products'> 
+<!--the entire table tags - above is bootstrap to separate the below list-->
+<tr>
+    <td>ID</td> <td>Vendor</td><td>Name</td> <td>Price</td> <td>Unit</td> <td>PhotoPath</td><td>Privilege</td> <td>Action</td>
+</tr>
+
+<tr *ngFor='let product of products'>
+<!--   for every product of products list, I want table raw (tr) prinited to the screen-->
+   <td>{{product.Id}} </td> <td>{{product.Vendor}} </td> 
+    <td>{{product.Name}} </td> <td>{{product.Price}} </td> <td>{{product.unit}} </td> <td>{{product.PhotoPath}} </td> 
+    <td class='actions'></td>
+    <a routerLink='/product/detail/{{product.Id}}'><img src='assets/details.png' width='20' height='20' title='Detail'></a> 
+    <a routerLink='/product/edit/{{product.Id}}'><img src='assets/pencil-icon.png' width='20' height='20' title='Edit'></a>
+</tr>
+</table>
+
+

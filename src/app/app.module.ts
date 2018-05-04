@@ -19,6 +19,11 @@ import { VendorCreateComponent } from './feature/vendor/vendor-create/vendor-cre
 import { VendorEditComponent } from './feature/vendor/vendor-edit/vendor-edit.component';
 import { VendorDetailComponent } from './feature/vendor/vendor-detail/vendor-detail.component';
 import { VendorService } from './service/vendor.service';
+import { ProductListComponent } from './feature/product/product-list/product-list.component';
+import { ProductCreateComponent } from './feature/product/product-create/product-create.component';
+import { ProductDetailComponent } from './feature/product/product-detail/product-detail.component';
+import { ProductEditComponent } from './feature/product/product-edit/product-edit.component';
+import { ProductService } from './service/product.service';
 
 
 
@@ -36,7 +41,11 @@ import { VendorService } from './service/vendor.service';
     VendorListComponent,
     VendorCreateComponent,
     VendorEditComponent,
-    VendorDetailComponent
+    VendorDetailComponent,
+    ProductListComponent,
+    ProductCreateComponent,
+    ProductDetailComponent,
+    ProductEditComponent
       
   ],
   imports: [
@@ -47,7 +56,8 @@ import { VendorService } from './service/vendor.service';
   ],
   providers: [
     UserService,
-    VendorService
+    VendorService,
+    ProductService
   ],
   bootstrap: [AppComponent]
 })
