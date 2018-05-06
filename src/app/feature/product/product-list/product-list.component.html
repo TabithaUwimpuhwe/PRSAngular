@@ -20,9 +20,10 @@
 <!--   for every product of products list, I want table raw (tr) prinited to the screen-->
    <td>{{product.Id}} </td> <td>{{product.Vendor}} </td> 
     <td>{{product.Name}} </td> <td>{{product.Price}} </td> <td>{{product.unit}} </td> <td>{{product.PhotoPath}} </td> 
-    <td class='actions'></td>
-    <a routerLink='/product/detail/{{product.Id}}'><img src='assets/details.png' width='20' height='20' title='Detail'></a> 
-    <a routerLink='/product/edit/{{product.Id}}'><img src='assets/pencil-icon.png' width='20' height='20' title='Edit'></a>
+    <td class='actions'>
+        <a routerLink='/product/detail/{{product.Id}}'><img src='assets/details.png' width='20' height='20' title='Detail'></a> 
+        <a routerLink='/product/edit/{{product.Id}}'><img src='assets/pencil-icon.png' width='20' height='20' title='Edit'></a>
+    </td>
 </tr>
 </table>
 

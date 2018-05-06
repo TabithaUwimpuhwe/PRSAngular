@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+//activate route will activate the drop menu
+import {Router, ActivatedRoute, ParamMap} from '@angular/router';
 import {Product} from '../../../model/product';
 import {ProductService} from '../../../service/product.service';
 import {Vendor} from '../../../model/vendor';
@@ -16,7 +17,9 @@ import {VendorService} from '../../../service/vendor.service';
 export class ProductCreateComponent implements OnInit {
     
     title: string ="Product Create";
+   
     product: Product = new Product();
+    
     resp: any;
     
     vendors: Vendor [];
@@ -32,9 +35,9 @@ export class ProductCreateComponent implements OnInit {
         });
     }
     
-  constructor(private productSvc: ProductService,
-               private router: Router,
-              private vendorSvc: VendorService) { }
+      constructor(private productSvc: ProductService,
+                private router: Router,
+                private vendorSvc: VendorService) { }
 
   ngOnInit() {
       this.vendorSvc.list()

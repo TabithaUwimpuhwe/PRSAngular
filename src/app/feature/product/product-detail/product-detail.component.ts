@@ -10,15 +10,15 @@ import {ProductService} from '../../../service/product.service'
 })
 
 export class ProductDetailComponent implements OnInit {
-    title: string = "Product Detail";
-    Product: Product;
+    title: string = "Product Detail!!!";
+    product: Product;
     
-  constructor(private ProductSvc: ProductService,
+  constructor(private productSvc: ProductService,
                private router: Router,
               private route: ActivatedRoute) { }
 
   ngOnInit() {
-      
+      console.log(" product detail comp - ngOnInit()");
       this.route.params
       .subscribe(parms=> {
           let id = parms["id"];
@@ -26,18 +26,19 @@ export class ProductDetailComponent implements OnInit {
       });
   }
     getProductById(id) {
-    this.ProductSvc.get(id)
-    .subscribe(Products=> {
-        this.Product=Products.length>0? Products[0]: null;
-        console.log("Product:", this.Product);
+        console.log("getting product");
+    this.productSvc.get(id)
+    .subscribe(products=> {
+        this.product=products.length>0? products[0]: null;
+        console.log("product:", this.product);
     });
 }
 
     remove(): void {
-        this.ProductSvc.remove(this.Product.Id)
+        this.productSvc.remove(this.product.Id)
         .subscribe(res=> {
         console.log(res);
-        this.router.navigateByUrl("/Product/list")
+        this.router.navigateByUrl("/product/list")
     })
   }
 

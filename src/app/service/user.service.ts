@@ -7,6 +7,11 @@ const url: string = 'http://localhost:8080/Users/'
 
 @Injectable()
 export class UserService { //p131
+    
+    //for login
+    login(uName, pwd): Observable<User[]> {
+		return this.http.get(url+"Authenticate?uname="+uName+"&pwd="+pwd) as Observable<User[]>;
+  }
  
 //add the RESTFULL method (add, remove, edit, delete) as in the Java Controller
 list(): Observable <User[]> { //p132

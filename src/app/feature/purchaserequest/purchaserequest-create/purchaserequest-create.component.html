@@ -1,0 +1,74 @@
+<app-menu></app-menu>
+ <div class='component-content'>
+ <div>
+<!--    <div class='righthalf'>-->
+    <span class='component-title'>[{{title}}]</span> 
+     
+</div>
+  
+<p *ngIf='!request'> loading ...</p>
+
+<div *ngIf='request'>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="user">User:</label>
+      <input [(ngModel)]='purchaserequest.User' name = 'User' type="text" class="form-control col-sm-6" id="purchaserequestuser" aria-describedby="userHelp" placeholder="User">
+      <small id="userHelp" class="form-text text-muted col-sm-2">purchaserequest's User</small>
+        </div>   
+        
+      <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="purchaserequestdescription">Description:</label>
+      <input [(ngModel)]='purchaserequest.Description' description = 'Description' type="text" class="form-control col-sm-6" id="purchaserequestdescription" aria-describedby="descriptionHelp" placeholder="Description">
+      <small id="descriptionHelp" class="form-text text-muted col-sm-2">purchaserequest's Description</small>
+        </div>  
+        
+       <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="purchaserequestjustification">Justification:</label>
+      <input [(ngModel)]='purchaserequest.Justification' name = 'Justification' type="text" class="form-control col-sm-6" id="purchaserequestjustification" aria-describedby="justificationHelp" placeholder="Justification">
+      <small id="justificationHelp" class="form-text text-muted col-sm-2">purchaserequest's Justification</small>
+    </div>
+    
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="purchaserequestdateneeded">Date needed:</label>
+      <input [(ngModel)]='purchaserequest.dateneeded' name = 'dateneeded' type="text" class="form-control col-sm-6" id="dateneeded" aria-describedby="dateneededHelp" placeholder="dateneeded">
+      <small id="dateneededHelp" class="form-text text-muted col-sm-2">purchaserequest's dateneeded</small>
+    </div>
+    
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="deliveryMode">Delivery Mode:</label>
+      <input [(ngModel)]='purchaserequest.DeliveryMode' name = 'DeliveryMode' type="text" class="form-control col-sm-6" id="deliveryMode" aria-describedby="deliveryModeHelp" placeholder="DeliveryMode">
+      <small id="phoneHelp" class="form-text text-muted col-sm-2">purchaserequest's Delivery Mode</small>
+    </div>
+    
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="status">Status:</label>
+      <input [(ngModel)]='purchaserequest.Status' name = 'Status' type="text" class="form-control col-sm-6" id="status" aria-describedby="statusHelp" placeholder="Status">
+      <small id="statusHelp" class="form-text text-muted col-sm-2">purchaserequest's Status</small>
+    </div>
+    
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="purchaserequestTotal">Reviewer:</label>
+      <input [(ngModel)]='purchaserequest.Reviewer' name = 'Total' type="checkbox" class="form-control col-sm-6" id="purchaserequestTotal" aria-describedby="totalHelp" placeholder="Reviewer">
+      <small id="totalHelp" class="form-text text-muted col-sm-2">Total </small>
+    </div>
+    
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="submittedDate">SubmittedDate:</label>
+      <input [(ngModel)]='purchaserequest.SubmittedDate' name = 'SubmittedDate' type="text" class="form-control col-sm-6" id="submittedDate" aria-describedby="submittedDateHelp" placeholder="SubmittedDate">
+      <small id="submittedDateHelp" class="form-text text-muted col-sm-2">purchaserequest's SubmittedDate</small>
+    </div>
+    
+    
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="reasonForRejection">Reviewer:</label>
+      <input [(ngModel)]='purchaserequest.Reviewer' name = 'ReasonForRejection' type="checkbox" class="form-control col-sm-6" id="ReasonForRejection" aria-describedby="reasonForRejectionHelp" placeholder="Reviewer">
+      <small id="reasonForRejectionHelp" class="form-text text-muted col-sm-2">ReasonForRejection </small>
+    </div>
+    
+    
+    
+    <div class='form-group'>
+      <button (click)='create()' class='btn btn-primary'>Create</button>
+    </div>
+        
+    </div>
+</div>

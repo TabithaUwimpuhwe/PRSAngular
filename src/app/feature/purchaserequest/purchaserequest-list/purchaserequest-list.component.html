@@ -1,0 +1,31 @@
+<app-menu></app-menu> 
+<!-- brough in from the app.component.html-->
+<div class='component-content'>
+    <div class='lefthalf'>
+    <span class='component-title'>[{{title}}]</span>
+<!--    link to the plus icon sign to add request list-->
+    <span><a routerLink='/purchaserequest/create'>
+        <img id='createnew' width='20' height='20' src='assets/add-icon.png' title='Add New'></a></span>
+    </div>
+</div>
+
+<p *ngIf='!requests'>Loading ...</p>
+
+<table class="table table-sm" *ngIf='requests'> 
+<!--the entire table tags - above is bootstrap to separate the below list-->
+<tr>
+    <td>ID</td> <td>User</td> <td>Description</td> <td>Justification</td><td>State</td> <td>DateNeeded</td> <td>DeliveryMode</td> <td>Status</td><td>Total</td> <td>SubmittedDate</td> <td>Priviledge</td> 
+</tr>
+
+<tr *ngFor='let request of requests'>
+<!--   for every request of requests list prints to the screen-->
+   <td>{{purchaserequest.Id}} </td> <td>{{purchaserequest.User}} </td> 
+    <td>{{purchaserequest.Description}} </td> <td>{{purchaserequest.Justification}} </td> <td>{{purchaserequest.State}} </td><td>{{purchaserequest.DateNeeded}}</td> <td>{{purchaserequest.DeliveryMode}} </td><td>{{purchaserequest.Status}} </td> <td>{{purchaserequest.Total}} </td> <td>{{purchaserequest.SubmittedDate}} </td> <td>{{purchaserequest.ReasonForRejection}} </td>  
+    
+    <td class='actions'></td>
+    <a routerLink='/purchaserequest/detail/{{purchaserequest.Id}}'><img src='assets/details.png' width='20' height='20' title='Detail'></a> 
+    <a routerLink='/purchaserequest/edit/{{purchaserequest.Id}}'><img src='assets/pencil-icon.png' width='20' height='20' title='Edit'></a>
+</tr>
+</table>
+
+

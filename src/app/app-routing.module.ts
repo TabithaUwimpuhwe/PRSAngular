@@ -20,6 +20,17 @@ import {ProductListComponent} from './feature/product/product-list/product-list.
 import {ProductDetailComponent} from './feature/product/product-detail/product-detail.component'
 import {ProductEditComponent} from './feature/product/product-edit/product-edit.component'
 
+import {PurchaseRequestCreateComponent} from './feature/purchaserequest/purchaserequest-create/purchaserequest-create.component';
+import {PurchaseRequestListComponent} from './feature/purchaserequest/purchaserequest-list/purchaserequest-list.component';
+import {PurchaseRequestDetailComponent} from './feature/purchaserequest/purchaserequest-detail/purchaserequest-detail.component'
+import {PurchaseRequestEditComponent} from './feature/purchaserequest/purchaserequest-edit/purchaserequest-edit.component'
+
+import {PurchaseRequestLineItemCreateComponent} from './feature/purchaserequestlineitem/purchaserequestlineitem-create/purchaserequestlineitem-create.component';
+import {PurchaseRequestLineItemListComponent} from './feature/purchaserequestlineitem/purchaserequestlineitem-list/purchaserequestlineitem-list.component';
+import {PurchaseRequestLineItemDetailComponent} from './feature/purchaserequestlineitem/purchaserequestlineitem-detail/purchaserequestlineitem-detail.component'
+import {PurchaseRequestLineItemEditComponent} from './feature/purchaserequestlineitem/purchaserequestlineitem-edit/purchaserequestlineitem-edit.component'
+
+
 const routes: Routes = [
     {path: '', redirectTo: '/', pathMatch: 'full'},
     {path: 'about', component:AboutComponent},
@@ -44,6 +55,18 @@ const routes: Routes = [
     {path: 'product/detail/:id', component:ProductDetailComponent},
     {path: 'product/remove/:id', component:ProductDetailComponent},
     {path: 'product/edit/:id', component:ProductEditComponent},
+    
+    {path: 'purchaserequest/list', component:PurchaseRequestListComponent},
+    {path: 'purchaserequest/create', component:PurchaseRequestCreateComponent},
+    {path: 'purchaserequest/detail/:id', component:PurchaseRequestDetailComponent},
+    {path: 'purchaserequest/remove/:id', component:PurchaseRequestDetailComponent},
+    {path: 'purchaserequest/edit/:id', component:PurchaseRequestEditComponent},
+    
+    {path: 'purchaserequestlineitem/list', component:PurchaseRequestLineItemListComponent},
+    {path: 'purchaserequestlineitem/create', component:PurchaseRequestLineItemCreateComponent},
+    {path: 'purchaserequestlineitem/detail/:id', component:PurchaseRequestLineItemDetailComponent},
+    {path: 'purchaserequestlineitem/remove/:id', component:PurchaseRequestLineItemDetailComponent},
+    {path: 'purchaserequestlineitem/edit/:id', component:PurchaseRequestLineItemEditComponent},
     
     {path: '**', component: HomeComponent}
     

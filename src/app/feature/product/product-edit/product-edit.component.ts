@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Router, ActivatedRoute} from '@angular/router';
 import {ProductService} from '../../../service/product.service';
 import {Product} from '../../../model/product';
-import {ActivatedRoute, Router} from '@angular/router';
 import {VendorService} from '../../../service/vendor.service';
 import {Vendor} from '../../../model/vendor';
 
@@ -18,10 +18,10 @@ export class ProductEditComponent implements OnInit {
     product:Product;
     vendors: Vendor[];
     
-  constructor(private productSvc: ProductService,
-               private router: Router,
-               private vndSvc: VendorService,
-              private route: ActivatedRoute) { 
+  constructor(  private productSvc: ProductService,
+                private vndSvc: VendorService,
+                private router: Router,
+                private route: ActivatedRoute) { 
   }
 
   ngOnInit() {
