@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { PrliService } from './prli.service';
+import { PurchaseRequestLineItemService } from './purchaserequestlineitem.service';
 
-describe('PrliService', () => {
+describe('PurchaseRequestLineItemService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [PrliService]
+      providers: [PurchaseRequestLineItemService]
     });
   });
 
-  it('should be created', inject([PrliService], (service: PrliService) => {
+  it('should be created', inject([PurchaseRequestLineItemService], (service: PurchaseRequestLineItemService) => {
     expect(service).toBeTruthy();
   }));
 });

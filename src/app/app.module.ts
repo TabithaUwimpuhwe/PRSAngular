@@ -31,12 +31,15 @@ import { PurchaseRequestCreateComponent } from './feature/purchaserequest/purcha
 import { PurchaseRequestEditComponent } from './feature/purchaserequest/purchaserequest-edit/purchaserequest-edit.component';
 import { PurchaseRequestDetailComponent } from './feature/purchaserequest/purchaserequest-detail/purchaserequest-detail.component';
 import { PurchaseRequestListComponent } from './feature/purchaserequest/purchaserequest-list/purchaserequest-list.component';
+import { PurchaseRequestService } from './service/purchaserequest.service';
 
 import {PurchaseRequestLineItemCreateComponent } from './feature/purchaserequestlineitem/purchaserequestlineitem-create/purchaserequestlineitem-create.component';
 import {PurchaseRequestLineItemEditComponent } from './feature/purchaserequestlineitem/purchaserequestlineitem-edit/purchaserequestlineitem-edit.component';
 import {PurchaseRequestLineItemDetailComponent } from './feature/purchaserequestlineitem/purchaserequestlineitem-detail/purchaserequestlineitem-detail.component';
 import {PurchaseRequestLineItemListComponent } from './feature/purchaserequestlineitem/purchaserequestlineitem-list/purchaserequestlineitem-list.component';
+import { PurchaseRequestLineItemService } from './service/purchaserequestlineitem.service';
 
+import { SystemService } from './service/system.service';
 
 @NgModule({
   declarations: [
@@ -57,10 +60,12 @@ import {PurchaseRequestLineItemListComponent } from './feature/purchaserequestli
     ProductCreateComponent,
     ProductDetailComponent,
     ProductEditComponent,
+      
     PurchaseRequestCreateComponent,
     PurchaseRequestEditComponent,
     PurchaseRequestDetailComponent,
     PurchaseRequestListComponent,
+      
     PurchaseRequestLineItemCreateComponent,
     PurchaseRequestLineItemEditComponent,
     PurchaseRequestLineItemDetailComponent,
@@ -76,9 +81,10 @@ import {PurchaseRequestLineItemListComponent } from './feature/purchaserequestli
   providers: [
     UserService,
     VendorService,
-    ProductService
-      //PurchaseRequestService
-      //PurchaseRequestLineItemService
+    ProductService,
+    PurchaseRequestService,
+    PurchaseRequestLineItemService,
+      SystemService
   ],
   bootstrap: [AppComponent]
 })

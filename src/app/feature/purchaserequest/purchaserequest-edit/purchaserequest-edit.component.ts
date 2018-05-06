@@ -15,9 +15,9 @@ title: string = 'PurchaseRequest Edit'
     resp: any;
     pr:PurchaseRequest;
 
-  constructor(private prSvc: PurchaseRequestService,
-               private router: Router,
-              private route: ActivatedRoute) { 
+  constructor(  private prSvc: PurchaseRequestService,
+                private router: Router,
+                private route: ActivatedRoute) { 
   }
 
   ngOnInit() {

@@ -14,7 +14,7 @@ import {SystemService} from '../../../service/system.service';
 export class PurchaseRequestListComponent implements OnInit {
 
     title: string = 'PurchaseRequest List';
-   requests: PurchaseRequest[]=[];
+   purchaserequests: PurchaseRequest[]=[];
     //moch ligin user
     user:User
     
@@ -34,7 +34,7 @@ export class PurchaseRequestListComponent implements OnInit {
      ngOnInit() {
     console.log('Getting list of prs...');
   	this.prSvc.list().subscribe(prs => {
-  		this.requests = prs;
+  		this.purchaserequests = prs;
         console.log(prs);
   	});
     // mock login - hardcoded for now for testing purposes

@@ -11,7 +11,7 @@ import {PurchaseRequestService} from '../../../service/purchaserequest.service';
 export class PurchaseRequestDetailComponent implements OnInit {
 
  title: string = "PurchaseRequest Detail";
-    pr: PurchaseRequest;
+    purchaserequest: PurchaseRequest;
     
   constructor(private prSvc: PurchaseRequestService,
             private router: Router,
@@ -28,16 +28,16 @@ export class PurchaseRequestDetailComponent implements OnInit {
     getPurchaseRequestById(id) {
     this.prSvc.get(id)
     .subscribe(requests=> {
-        this.pr=requests.length>0? requests[0]: null;
-        console.log("request:", this.pr);
+        this.purchaserequest=requests.length>0? requests[0]: null;
+        console.log("request:", this.purchaserequest);
     });
 }
 
     remove(): void {
-        this.prSvc.remove(this.pr.Id)
+        this.prSvc.remove(this.purchaserequest.Id)
         .subscribe(res=> {
         console.log(res);
-        this.router.navigateByUrl("/pr/list")
+        this.router.navigateByUrl("/purchaserequest/list")
     })
   }
 

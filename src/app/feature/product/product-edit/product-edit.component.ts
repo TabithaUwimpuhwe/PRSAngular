@@ -11,6 +11,7 @@ import {Vendor} from '../../../model/vendor';
   templateUrl: './product-edit.component.html',
   styleUrls: ['./product-edit.component.css']
 })
+
 export class ProductEditComponent implements OnInit {
     title: string = 'Product Edit';
     id: string;
