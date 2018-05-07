@@ -4,6 +4,7 @@ import {Router} from '@angular/router';
 import {PurchaseRequestService} from '../../../service/purchaserequest.service';
 import {User} from '../../../model/user';
 import {UserService} from '../../../service/user.service';
+import {SystemService} from '../../../service/system.service';
 
 @Component({
   selector: 'app-purchaserequest-create',
@@ -14,13 +15,23 @@ import {UserService} from '../../../service/user.service';
 export class PurchaseRequestCreateComponent implements OnInit {
 
     title: string ="PurchaseRequest Create";
-    pr: PurchaseRequest = new PurchaseRequest();
-//empty arg instead of (0, null, '', '', null, '', '', null, null, '') bc it is already pre-defined in the constructor model/pr.ts
     resp: any;
+    pr: PurchaseRequest = new PurchaseRequest();
+    authenticatedUser: User;
     
-    create (){
-        console.log('create a Request...');
-        console.log(this.pr);
+  constructor(  private prSvc: PurchaseRequestService,
+                private router: Router,
+                private sysSvc: SystemService,
+                private userSvc: UserService) { }
+                
+  ngOnInit() {
+//      if(this.sysSvc.data.user.loggedIn) {
+//  		this.purchaseRequest.User = this.sysSvc.data.user.instance;
+//  	} else {
+//  		console.error("User not logged in.");
+  }
+
+ create (){
         this.prSvc.create(this.pr)
         .subscribe(resp => {
             this.resp = resp;
@@ -28,12 +39,4 @@ export class PurchaseRequestCreateComponent implements OnInit {
             this.router.navigate(['/purchaserequest/list']);
         });
     }
-    
-  constructor(private prSvc: PurchaseRequestService,
-            private router: Router,
-            private userSvc: UserService) { }
-
-  ngOnInit() {
-  }
-
 }

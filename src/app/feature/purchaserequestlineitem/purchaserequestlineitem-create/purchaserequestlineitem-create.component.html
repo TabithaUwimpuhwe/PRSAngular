@@ -1,3 +1,31 @@
-<p>
-  purchaserequestlineitem-create works!
-</p>
+<app-menu></app-menu>
+<div class='component-content'>
+	<div>
+		<span class='component-title'  *ngIf='purchaseRequest'>{{title}} - PR ID:{{purchaseRequest.Id} </span> 
+		<span><a routerLink='/productrequestlineitem/list'>Back to list</a></span>
+	</div>
+	
+	<p *ngIf='!purchaserequestlineitem'>Loading ...</p>
+
+	<div *ngIf='purchaserequestlineitem'>
+		<div class='form-group row' >
+		    <label class='col-form-label col-sm-2' for="purchaserequestProductID"> Product </label>
+			<div class=' col-sm-6'>
+				<select [(ngModel)]='prli.Product' class='form-control' name='Product' id='purchaserequestProductID'>
+					<option *ngFor="let product of products" [ngValue]="product">{{product.Name}} | {{product.Vendor.Name}}</option>
+				</select>
+			</div>
+		</div>
+		
+	
+	  	<div class="form-group row">
+	    <label class='col-form-label col-sm-2' for="purchaserequestquantity">Quantity:</label>
+	    <input [(ngModel)]='prli.Quantity' name='Quantity' type="number" class="form-control col-sm-6" id="purchaserequestquantity" aria-describedby="quantityHelp" placeholder="Quantity">
+	    <small id="quantityHelp" class="form-text text-muted col-sm-2">The Quantity</small>
+	  </div>
+	  
+	  <div class='form-group'>
+	  	<button (click)='create()' class='btn btn-primary'>Create</button>
+	  </div>
+  </div>
+</div>
