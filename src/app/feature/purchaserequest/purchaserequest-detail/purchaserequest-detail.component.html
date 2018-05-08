@@ -3,15 +3,18 @@
 	<div class = ''>
 		<div class = 'lefthalf'>
 			<span class='component-title'>[{{title}}]</span>
-			<span><a routerLink='/purchaserequest/create'><img id='createnew' width='20' height='20' src='assets/add-icon.png' title='Add New'></a></span>
+			<span><a routerLink='/purchaserequest/create'>
+			<img id='createnew' width='20' height='20' src='assets/add-icon.png' title='Add New'></a>
+			<span><a routerLink='/purchaserequest/list'>Back to list</a></span>
+			</span>
 		</div>
 	</div>
-  <table class="table table-sm" *ngIf='request'>
+  <table class="table table-sm" *ngIf='purchaserequest'>
     <tr>
       <td>Id</td><td>{{ purchaserequest.Id}}</td>
     </tr>
     <tr>
-      <td>Purchase Request User </td><td>{{ user.User }}</td>
+      <td>Purchase Request User </td><td>{{ purchaserequest.User.UserName}}</td>
     </tr>
     <tr>
     <tr>

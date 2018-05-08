@@ -31,15 +31,16 @@ import { PurchaseRequestCreateComponent } from './feature/purchaserequest/purcha
 import { PurchaseRequestEditComponent } from './feature/purchaserequest/purchaserequest-edit/purchaserequest-edit.component';
 import { PurchaseRequestDetailComponent } from './feature/purchaserequest/purchaserequest-detail/purchaserequest-detail.component';
 import { PurchaseRequestListComponent } from './feature/purchaserequest/purchaserequest-list/purchaserequest-list.component';
+import { PurchaseRequestLinesComponent } from './feature/purchaserequest/purchaserequest-lines/purchaserequest-lines.component';
 import { PurchaseRequestService } from './service/purchaserequest.service';
 
 import {PurchaseRequestLineItemCreateComponent } from './feature/purchaserequestlineitem/purchaserequestlineitem-create/purchaserequestlineitem-create.component';
 import {PurchaseRequestLineItemEditComponent } from './feature/purchaserequestlineitem/purchaserequestlineitem-edit/purchaserequestlineitem-edit.component';
-import {PurchaseRequestLineItemDetailComponent } from './feature/purchaserequestlineitem/purchaserequestlineitem-detail/purchaserequestlineitem-detail.component';
-import {PurchaseRequestLineItemListComponent } from './feature/purchaserequestlineitem/purchaserequestlineitem-list/purchaserequestlineitem-list.component';
 import { PurchaseRequestLineItemService } from './service/purchaserequestlineitem.service';
 
 import { SystemService } from './service/system.service';
+import { SortPipe } from './pipe/sort.pipe';
+
 
 @NgModule({
   declarations: [
@@ -68,9 +69,9 @@ import { SystemService } from './service/system.service';
       
     PurchaseRequestLineItemCreateComponent,
     PurchaseRequestLineItemEditComponent,
-    PurchaseRequestLineItemDetailComponent,
-    PurchaseRequestLineItemListComponent,
-    
+   
+    PurchaseRequestLinesComponent,
+    SortPipe
   ],
   imports: [
     BrowserModule,
@@ -84,7 +85,7 @@ import { SystemService } from './service/system.service';
     ProductService,
     PurchaseRequestService,
     PurchaseRequestLineItemService,
-      SystemService
+    SystemService
   ],
   bootstrap: [AppComponent]
 })

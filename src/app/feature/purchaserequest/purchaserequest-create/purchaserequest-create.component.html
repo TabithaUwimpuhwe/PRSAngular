@@ -7,12 +7,12 @@
      
 </div>
   
-<p *ngIf='!request'> loading ...</p>
+<p *ngIf='!purchaserequest'> loading ...</p>
 
-<div *ngIf='request'>
+<div *ngIf='purchaserequest'>
     <div class="form-group row">
       <label class='col-form-label col-sm-2' for="user">User:</label>
-      <input [(ngModel)]='purchaserequest.User' name = 'User' type="text" class="form-control col-sm-6" id="purchaserequestuser" aria-describedby="userHelp" placeholder="User">
+      <input [(ngModel)]='purchaserequest.User.UserName' name = 'UserName' type="text" class="form-control col-sm-6" id="purchaserequestuser" aria-describedby="userHelp" placeholder="User">
       <small id="userHelp" class="form-text text-muted col-sm-2">User name</small>
         </div>   
         

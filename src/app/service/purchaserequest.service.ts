@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {PurchaseRequest} from '../model/purchaserequest';
 import {Observable} from 'rxjs/Observable';
 import {HttpClient} from '@angular/common/http';
-
+import {User} from '../model/user';
 const url: string = 'http://localhost:8080/PurchaseRequests/'
 
 @Injectable()
@@ -21,7 +21,11 @@ create(purchaserequest: PurchaseRequest): Observable <any> {
 get(id): Observable<PurchaseRequest[]> {
     return this.http.get(url+"Get?id="+id) as Observable<PurchaseRequest[]>;
   }
-  
+    
+ submitForReview(purchaserequest: PurchaseRequest): Observable<any> {
+        return this.http.post(url+"SubmitForReview", purchaserequest) as Observable<any>;
+    }
+
 remove(id): Observable<any> {
       return this.http.get(url+"Remove?id="+id) as Observable<any>;
   }

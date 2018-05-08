@@ -22,19 +22,14 @@ export class PurchaseRequestListComponent implements OnInit {
   constructor(private userSvc: UserService,
               private prSvc: PurchaseRequestService,
               private sysSvc: SystemService) { }
- 
-//  ngOnInit() {
-//       //connecting to the back end purchaserequest table in Eclipse/MySQL
-//    this.prSvc.list().subscribe(prSvcList =>{ 
-//                        console.log(prSvcList);
-//                        this.requests = prSvcList;
-//      })   
-//     
+  
       //connecting to the back end purchaserequest table in Eclipse/MySQL
      ngOnInit() {
-    console.log('Getting list of prs...');
+    //console.log('Getting list of prs...');
   	this.prSvc.list().subscribe(prs => {
   		this.purchaserequests = prs;
+        
+        //add things here
         console.log(prs);
   	});
     // mock login - hardcoded for now for testing purposes

@@ -13,7 +13,7 @@ export class PurchaseRequestEditComponent implements OnInit {
 title: string = 'PurchaseRequest Edit'
     id: string;
     resp: any;
-    pr:PurchaseRequest;
+    purchaserequest:PurchaseRequest;
 
   constructor(  private prSvc: PurchaseRequestService,
                 private router: Router,
@@ -21,11 +21,14 @@ title: string = 'PurchaseRequest Edit'
   }
 
   ngOnInit() {
+      console.log("a");
       this.route.params.subscribe(parms=> this.id=parms['id']);
+      console.log("id="+this.id);
       this.prSvc.get(this.id)
       .subscribe(requests=>{
-          this.pr=requests.length>0? requests[0]:null;
-          console.log(this.pr);
+          console.log("b");
+          this.purchaserequest=requests.length>0? requests[0]:null;
+          console.log(this.purchaserequest);
       })
   }
 

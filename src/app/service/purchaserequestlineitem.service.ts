@@ -17,6 +17,11 @@ create(purchaserequestlineitem: PurchaseRequestLineItem): Observable <any> {
     console.log("purchaserequestlineitemsvc.create...")
     return this.http.post(url+"Add", purchaserequestlineitem) as Observable <any>;
 }
+ listByPR(id): Observable<PurchaseRequestLineItem[]> {
+        console.log('Calling url: '+url+'LinesForPR?id='+id);
+        return this.http.get(url+"LinesForPR?id="+id) as Observable<PurchaseRequestLineItem[]>;
+
+    }
     
 get(id): Observable<PurchaseRequestLineItem[]> {
     return this.http.get(url+"Get?id="+id) as Observable<PurchaseRequestLineItem[]>;

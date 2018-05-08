@@ -30,6 +30,7 @@ export class PurchaseRequestDetailComponent implements OnInit {
     .subscribe(requests=> {
         this.purchaserequest=requests.length>0? requests[0]: null;
         console.log("request:", this.purchaserequest);
+        console.log(requests);
     });
 }
 

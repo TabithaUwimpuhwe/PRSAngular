@@ -1,5 +1,4 @@
 <app-menu></app-menu> 
-<!-- brough in from the app.component.html-->
 <div class='component-content'>
     <div class='lefthalf'>
     <span class='component-title'>[{{title}}]</span>
@@ -7,25 +6,35 @@
     <span><a routerLink='/purchaserequest/create'>
         <img id='createnew' width='20' height='20' src='assets/add-icon.png' title='Add New'></a></span>
     </div>
-</div>
 
 <p *ngIf='!purchaserequests'>Loading ...</p>
 
 <table class="table table-sm" *ngIf='purchaserequests'> 
 <!--the entire table tags - above is bootstrap to separate the below list-->
 <tr>
-    <td>ID</td> <td>User</td> <td>Description</td> <td>Justification</td><td>State</td> <td>DateNeeded</td> <td>DeliveryMode</td> <td>Status</td><td>Total</td> <td>SubmittedDate</td> <td>Privilege</td> 
+    <td>ID</td> 
+    <td>Description</td>
+    <td>Status</td>
+    <td>Total</td>
+    <td>Action</td>
+<!--
+    <td>DateNeeded</td> <td>User</td> <td>Justification</td><td>Status</td> <td>DeliveryMode</td>  <td>SubmittedDate</td> <td>Privilege</td> 
+-->
 </tr>
-
-<tr *ngFor='let purchaserequest of purchaserequests'>
 <!--   for every request of requests list prints to the screen-->
-   <td>{{purchaserequest.Id}} </td> <td>{{purchaserequest.User.UserName}} </td> 
-    <td>{{purchaserequest.Description}} </td> <td>{{purchaserequest.Justification}} </td> <td>{{purchaserequest.State}} </td><td>{{purchaserequest.DateNeeded}}</td> <td>{{purchaserequest.DeliveryMode}} </td><td>{{purchaserequest.Status}} </td> <td>{{purchaserequest.Total}} </td> <td>{{purchaserequest.SubmittedDate}} </td> <td>{{purchaserequest.ReasonForRejection}} </td>  
+<tr *ngFor='let purchaserequest of purchaserequests'>
+            <td>{{purchaserequest.Id}}</td>
+			<td>{{purchaserequest.Description}}</td>
+			<td>{{purchaserequest.Status}}</td>
+			<td>{{purchaserequest.Total | currency}}</td>
     
-    <td class='actions'></td>
+    <td class='actions'>
     <a routerLink='/purchaserequest/detail/{{purchaserequest.Id}}'><img src='assets/details.png' width='20' height='20' title='Detail'></a> 
     <a routerLink='/purchaserequest/edit/{{purchaserequest.Id}}'><img src='assets/pencil-icon.png' width='20' height='20' title='Edit'></a>
+    <a routerLink='/purchaserequest/lines/{{purchaserequest.Id}}'><img src='assets/lines.png'  width='20' height='20' title='Lines'></a>
+    </td>
 </tr>
 </table>
-
+<p>{{searchCriteria}}</p>
+</div>
 

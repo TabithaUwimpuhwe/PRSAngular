@@ -13,10 +13,19 @@
 <table class="table table-sm" *ngIf='users'> 
 <!--the entire table tags - above is bootstrap to separate the below list-->
 <tr>
-    <td>ID</td> <td>UserName</td><td>First Name</td> <td>Last Name</td> <td>Phone Number</td> <td>Email</td><td>Privilege</td> <td>Action</td>
+<!--    <td>ID</td> -->
+    <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold" (click)="setSortBy('Id')">ID</a></th>
+    <td>UserName</td>
+    <th class="table-secondary btn-link"><a class="btn btn-link font-weight-bold" (click)="setSortBy('FirstName')">First Name</a></th> 
+    <td>Last Name</td> 
+    <td>Phone Number</td> 
+    <td>Email</td>
+    
+    <td>Privilege</td> 
+    <td>Action</td>
 </tr>
 
-<tr *ngFor='let user of users'>
+<tr *ngFor='let user of users | sort:sortBy'>
 <!--   for every user of users list, I want table raw (tr) prinited to the screen-->
    <td>{{user.Id}} </td> <td>{{user.UserName}} </td> 
     <td>{{user.Password}} </td> <td>{{user.FirstName}} </td> <td>{{user.LastName}} </td> <td>{{user.PhoneNumber}} </td><td>{{user.Email}} </td> <td>{{user.Reviewer}} </td><td>{{user.Admin}} </td> 

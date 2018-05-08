@@ -1,3 +1,26 @@
-<p>
-  purchaserequestlineitem-edit works!
-</p>
+<app-menu></app-menu>
+
+<div class = 'contentBox'>
+	<div class = "Box">
+	<div>
+		<h1><span id="barcode"> ---------</span>{{title}}<span id="barcode"> ----</span></h1>
+	</div>
+			<p *ngIf = '!purchaserequestlineitem'>Loading...</p>
+			<div *ngIf = 'purchaserequestlineitem'>
+			
+			<div class="form-group row">
+				<label>Product: </label>
+				<select [(ngModel)]='purchaserequestlineitem.Product.Id' [compareWith]='compareFn'>
+					<option *ngFor = 'let product of products' [ngValue]="product.Id" [selected]="product.Id">{{product.Name}}</option>
+				</select>
+			</div>
+			<div class="form-group row">
+				<label>Quantity: </label>
+				<input [(ngModel)]='purchaserequestlineitem.Quantity' name = 'Quantity' type="number" class="form-control col-sm-6" id="purchaserequestlineitemdescription" aria-describedby="purchaserequestlineitemquantityHelp" placeholder="Quantity">
+			</div> 
+			<div class='form-group'>
+				<button (click)='change()' class='btn btn-primary'>Update</button>
+			</div>
+		</div>
+	</div>
+</div>
