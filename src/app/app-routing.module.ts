@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 //import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router'; //added and below
-import {UserLoginComponent} from './feature/user/user-login/user-login.component'
 import {HomeComponent} from './core/home/home.component';
 import {AboutComponent} from './core/about/about.component';
 
 import {UserCreateComponent} from './feature/user/user-create/user-create.component';
 import {UserListComponent} from './feature/user/user-list/user-list.component';
-import {UserDetailComponent} from './feature/user/user-detail/user-detail.component'
-import {UserEditComponent} from './feature/user/user-edit/user-edit.component'
+import {UserDetailComponent} from './feature/user/user-detail/user-detail.component';
+import {UserEditComponent} from './feature/user/user-edit/user-edit.component';
+import {UserLoginComponent} from './feature/user/user-login/user-login.component';
 
 import {VendorListComponent} from './feature/vendor/vendor-list/vendor-list.component';
 import {VendorCreateComponent} from './feature/vendor/vendor-create/vendor-create.component';
@@ -17,8 +17,8 @@ import {VendorEditComponent} from './feature/vendor/vendor-edit/vendor-edit.comp
 
 import {ProductCreateComponent} from './feature/product/product-create/product-create.component';
 import {ProductListComponent} from './feature/product/product-list/product-list.component';
-import {ProductDetailComponent} from './feature/product/product-detail/product-detail.component'
-import {ProductEditComponent} from './feature/product/product-edit/product-edit.component'
+import {ProductDetailComponent} from './feature/product/product-detail/product-detail.component';
+import {ProductEditComponent} from './feature/product/product-edit/product-edit.component';
 
 import {PurchaseRequestCreateComponent} from './feature/purchaserequest/purchaserequest-create/purchaserequest-create.component';
 import {PurchaseRequestListComponent} from './feature/purchaserequest/purchaserequest-list/purchaserequest-list.component';
@@ -40,7 +40,7 @@ const routes: Routes = [
     {path: 'user/detail/:id', component:UserDetailComponent},
     {path: 'user/remove/:id', component:UserDetailComponent},
     {path: 'user/edit/:id', component:UserEditComponent},
-    {path: 'user/login/:id', component:UserLoginComponent},
+    {path: 'user/login', component:UserLoginComponent},
    
     
     {path: 'vendor/list', component:VendorListComponent},
