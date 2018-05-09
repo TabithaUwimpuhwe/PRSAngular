@@ -32,6 +32,7 @@ import { PurchaseRequestLinesComponent } from './feature/purchaserequest/purchas
 
 const routes: Routes = [
     {path: '', redirectTo: '/', pathMatch: 'full'},
+    
     {path: 'about', component:AboutComponent},
     {path: 'home', component: HomeComponent},
     

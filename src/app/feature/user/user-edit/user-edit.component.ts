@@ -29,5 +29,13 @@ export class UserEditComponent implements OnInit {
           console.log(this.user);
       })
   }
-
+Change(){
+    console.log(this.user);
+    this.userSvc.change(this.user)
+    .subscribe(resp=> {
+        this.resp=resp;
+        console.log("User-Change:", this.resp);
+        this.router.navigate(['/user/list']);
+    })
+}
 }

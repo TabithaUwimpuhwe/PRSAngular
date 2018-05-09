@@ -29,4 +29,12 @@ title: string = 'Vendor Edit'
       })
   }
 
+Change(){
+    console.log(this.vendor);
+    this.vendorSvc.change(this.vendor)
+    .subscribe(resp=> {
+        this.resp=resp;
+        console.log("User-Vendor:", this.resp);
+        this.router.navigate(['/vendor/list']);
+    });
 }
