@@ -44,13 +44,13 @@
     
     <div class="form-group row">
       <label class='col-form-label col-sm-2' for="status">Status:</label>
-      <input [(ngModel)]='purchaserequest.Status' name = 'Status' type="text" class="form-control col-sm-6" id="status" aria-describedby="statusHelp" placeholder="Status">
+      <input [(ngModel)]='purchaserequest.Status' name = 'Status' type="text" class="form-control col-sm-6" id="status" aria-describedby="statusHelp" placeholder="Status" disabled>
       <small id="statusHelp" class="form-text text-muted col-sm-2">purchaserequest's Status</small>
     </div>
     
     <div class="form-group row">
-      <label class='col-form-label col-sm-2' for="purchaserequestTotal">Reviewer:</label>
-      <input [(ngModel)]='purchaserequest.Reviewer' name = 'Total' type="checkbox" class="form-control col-sm-6" id="purchaserequestTotal" aria-describedby="totalHelp" placeholder="Reviewer">
+      <label class='col-form-label col-sm-2' for="purchaserequestTotal">Total:</label>
+      <input [(ngModel)]='purchaserequest.Total'disabled name = 'Total' type="text" class="form-control col-sm-6" id="purchaserequestTotal" aria-describedby="totalHelp" placeholder="Reviewer">
       <small id="totalHelp" class="form-text text-muted col-sm-2">Total </small>
     </div>
     
@@ -62,8 +62,8 @@
     
     
     <div class="form-group row">
-      <label class='col-form-label col-sm-2' for="reasonForRejection">Reviewer:</label>
-      <input [(ngModel)]='purchaserequest.Reviewer' name = 'ReasonForRejection' type="checkbox" class="form-control col-sm-6" id="ReasonForRejection" aria-describedby="reasonForRejectionHelp" placeholder="Reviewer">
+      <label class='col-form-label col-sm-2' for="reasonForRejection">Reason For Rejection:</label>
+      <input [(ngModel)]='purchaserequest.ReasonForRejection' disabled name = 'ReasonForRejection' type="text" class="form-control col-sm-6" id="ReasonForRejection" aria-describedby="reasonForRejectionHelp" placeholder="Reason For Rejection">
       <small id="reasonForRejectionHelp" class="form-text text-muted col-sm-2">ReasonForRejection </small>
     </div>
     

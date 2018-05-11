@@ -1,7 +1,9 @@
 <app-menu></app-menu> 
 <div class='component-content'>
     <div class=''>
-    <span class='component-title'>[{{title}}]</span>
+        <div class='lefthalf'>
+        <span class='component-title'>[{{title}}]</span>
+        </div>
     </div>
 
 <p *ngIf='!purchaserequests'>Loading ...</p>
@@ -19,7 +21,7 @@
 <!--   for every request of requests review prints to the screen-->
 <tr *ngFor='let purchaserequest of purchaserequests | sort:sortBy'>
             <td>{{purchaserequest.Id}}</td>
-            <td>{{purchaserequest.UserName}}</td>
+            <td>{{purchaserequest.User.UserName}}</td>
 			<td>{{purchaserequest.Description}}</td>
 			<td>{{purchaserequest.Status}}</td>
 			<td>{{purchaserequest.Total | currency}}</td>

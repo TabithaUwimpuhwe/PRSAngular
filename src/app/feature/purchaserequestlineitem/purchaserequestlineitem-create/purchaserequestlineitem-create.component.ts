@@ -43,36 +43,36 @@ export class PurchaseRequestLineItemCreateComponent implements OnInit {
   }
 
   ngOnInit() {
-      this.route.params.subscribe(parms=> {this.prid=parms['id'];
-    console.log("prli create id: "+this.prid);
-      this.purchaserequestSvc.get(this.prid)
+      this.route.params.subscribe(parms=> {
+        this.prid=parms['id'];
+        console.log("prli create id: "+this.prid);
+        this.purchaserequestSvc.get(this.prid)
           .subscribe(purchaserequests => {
-          console.log("prs = "+purchaserequests);
-          console.log("length = "+purchaserequests.length);
-          console.log("pr = "+purchaserequests[0]);
+            console.log("prs = "+purchaserequests);
+            console.log("length = "+purchaserequests.length);
+            console.log("pr = "+purchaserequests[0]);
           this.purchaserequest = purchaserequests[0];
-          console.log("pr2 = "+this.purchaserequest);
+            console.log("pr2 = "+this.purchaserequest);
           this.purchaserequest = purchaserequests.length>0? purchaserequests[0]:null;
         });
       });
-      console.log("pr.......:", this.purchaserequest);
-      this.productSvc.list().subscribe(products => 
-                                       {this.products = products;
+            console.log("pr.......:", this.purchaserequest);
+        this.productSvc.list()
+            .subscribe(products => {
+        this.products = products;
       })
   }
 create(){
     
     this.prli.PurchaseRequest = this.purchaserequest;
-    	console.log('prli service create...');
-	console.log( this.prli);
-
+    	   console.log('prli service create...');
+	       console.log( this.prli);
+    
     this.prliSvc.create(this.prli)
     .subscribe(resp=> {
-        this.resp=resp;
-        console.log("PurchaseRequestLineItem-Create:", this.resp);
-        // come back to this
-//        this.router.navigate(['/purchaserequestlineitem/list']);
-      this.router.navigateByUrl('/purchaserequest/detail/'+this.prid);  
+    this.resp=resp;
+            console.log("PurchaseRequestLineItem-Create:", this.resp);
+    this.router.navigateByUrl('/purchaserequest/lines/'+this.prid);  
     })
 }
 }

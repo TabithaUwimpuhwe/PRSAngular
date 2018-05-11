@@ -30,6 +30,8 @@ import {PurchaseRequestLineItemCreateComponent} from './feature/purchaserequestl
 import {PurchaseRequestLineItemEditComponent} from './feature/purchaserequestlineitem/purchaserequestlineitem-edit/purchaserequestlineitem-edit.component';
 
 import { PurchaseRequestLinesComponent } from './feature/purchaserequest/purchaserequest-lines/purchaserequest-lines.component';
+import { PurchaseRequestApproveComponent } from './feature/purchaserequest/purchaserequest-approve/purchaserequest-approve.component';
+
 
 const routes: Routes = [
     {path: '', redirectTo: '/', pathMatch: 'full'},
@@ -66,9 +68,10 @@ const routes: Routes = [
     
     {path: 'purchaserequestlineitem/create/:id', component:PurchaseRequestLineItemCreateComponent},
     {path:'purchaserequestlineitem/edit/:id/:prid', component: PurchaseRequestLineItemEditComponent},
-    
     {path:'purchaserequest/lines/:id', component: PurchaseRequestLinesComponent},
     {path:'purchaserequest/linedel/:id/:del', component: PurchaseRequestLinesComponent},
+    
+    {path: 'purchaserequest/approve/:id', component:PurchaseRequestApproveComponent},
     
     {path: '**', component: HomeComponent}
     

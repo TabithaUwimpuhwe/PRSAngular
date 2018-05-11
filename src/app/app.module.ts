@@ -42,6 +42,7 @@ import { PurchaseRequestLineItemService } from './service/purchaserequestlineite
 import { SystemService } from './service/system.service';
 import { SortPipe } from './pipe/sort.pipe';
 import { PurchaseRequestReviewComponent } from './feature/purchaserequest/purchaserequest-review/purchaserequest-review.component';
+import { PurchaseRequestApproveComponent } from './feature/purchaserequest/purchaserequest-approve/purchaserequest-approve.component';
 
 
 @NgModule({
@@ -74,7 +75,8 @@ import { PurchaseRequestReviewComponent } from './feature/purchaserequest/purcha
    
     PurchaseRequestLinesComponent,
     SortPipe,
-    PurchaseRequestReviewComponent
+    PurchaseRequestReviewComponent,
+    PurchaseRequestApproveComponent
   ],
   imports: [
     BrowserModule,
@@ -88,6 +90,7 @@ import { PurchaseRequestReviewComponent } from './feature/purchaserequest/purcha
     ProductService,
     PurchaseRequestService,
     PurchaseRequestLineItemService,
+      
     SystemService
   ],
   bootstrap: [AppComponent]

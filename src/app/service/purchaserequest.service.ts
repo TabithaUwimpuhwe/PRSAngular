@@ -15,7 +15,7 @@ list(): Observable <PurchaseRequest[]> { //p132
     }
 
 listForReview(id): Observable<PurchaseRequest[]> {
-      return this.http.get(url+"ListReview?id="+id) as Observable<PurchaseRequest[]>;
+      return this.http.get(url+"ListReview?id="+id + "&status=review") as Observable<PurchaseRequest[]>;
   }
     
 create(purchaseRequest: PurchaseRequest): Observable <any> {

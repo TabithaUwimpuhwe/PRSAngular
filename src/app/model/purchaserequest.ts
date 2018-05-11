@@ -3,6 +3,7 @@ import { User } from './user';
 export class PurchaseRequest {
     Id: number;
     User: User;
+    UserName: string;
     Description: string;
     Justification: string;
     DateNeeded: Date;

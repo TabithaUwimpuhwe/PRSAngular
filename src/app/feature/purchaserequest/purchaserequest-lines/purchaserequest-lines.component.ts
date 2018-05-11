@@ -28,18 +28,8 @@ constructor(private prSvc: PurchaseRequestService,
   		    private prliSvc: PurchaseRequestLineItemService,
   		    private router: Router,
   		    private route: ActivatedRoute) { }
-
-    submitForReview() {
-    this.prSvc.submitForReview(this.purchaserequest)
-      .subscribe(resp => {
-        this.resp = resp;
-        console.log("PurchaseRequest-Lines-SubmitForReview:", this.resp);
-        this.router.navigate(['/purchaserequest/list']);
-      });
-
-  }
     
-  ngOnInit() {
+ngOnInit() {
   	this.route.params.subscribe(parms => this.id = parms['id']);
     this.route.params.subscribe(parms => this.prliId = parms['del']);
   	this.prSvc.get(this.id)
@@ -55,6 +45,8 @@ constructor(private prSvc: PurchaseRequestService,
 //      console.log("calling remove...");
 //      this.remove();
 //    }
+    
+    
       
     console.log('Calling PR LineItems...');
   	this.prliSvc.listByPR(this.id)
@@ -69,14 +61,24 @@ constructor(private prSvc: PurchaseRequestService,
     );   
   }
     
-//	remove(): void {
-//    this.prliSvc.remove(this.prliId)
-//      .subscribe(res => {
-//        console.log(res);
-//        this.router.navigateByUrl("/purchaserequest/lines/"+this.id);
-//      });
-//  }
+	remove(): void {
+    this.prliSvc.remove(this.prliId)
+      .subscribe(res => {
+        console.log(res);
+        this.router.navigateByUrl("/purchaserequest/lines/"+this.id);
+      });
+  }
   
+      submitForReview() {
+    this.prSvc.submitForReview(this.purchaserequest)
+      .subscribe(resp => {
+        this.resp = resp;
+        console.log("PurchaseRequest-Lines-SubmitForReview:", this.resp);
+        this.router.navigate(['/purchaserequest/list']);
+      });
+
+  }
+
   doThis(id: number): void {
     console.log("doThis called... #="+id);
   }

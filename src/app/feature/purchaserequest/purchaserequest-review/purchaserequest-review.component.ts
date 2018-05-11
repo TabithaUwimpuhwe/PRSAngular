@@ -29,16 +29,16 @@ export class PurchaseRequestReviewComponent implements OnInit {
     console.log("userid = "+this.authenticatedUser.Id);
     this.prSvc.listForReview(this.authenticatedUser.Id).subscribe(prs =>  {
   		this.purchaserequests = prs;
-        //this.populateUserName();
+        this.populateUserName();
         console.log(prs);
   	 });
     }
     
-//  populateUserName(): void {
-//    for (let pr of this.purchaserequests) {
-//      pr.User=pr.User.UserName;
-//    }
-//  }
+  populateUserName(): void {
+    for (let pr of this.purchaserequests) {
+      pr.UserName=pr.User.UserName;
+    }
+  }
   
   setSortBy(column: string): void {
     this.sortBy = column;
