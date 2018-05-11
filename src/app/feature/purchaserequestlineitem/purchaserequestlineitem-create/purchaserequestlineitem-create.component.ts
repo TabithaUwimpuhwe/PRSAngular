@@ -44,14 +44,23 @@ export class PurchaseRequestLineItemCreateComponent implements OnInit {
 
   ngOnInit() {
       this.route.params.subscribe(parms=> {this.prid=parms['id'];
-      this.purchaserequestSvc.get(this.prid).subscribe(purchaserequests => {this.purchaserequest = purchaserequests.length>0? purchaserequests[0]:null;});
+    console.log("prli create id: "+this.prid);
+      this.purchaserequestSvc.get(this.prid)
+          .subscribe(purchaserequests => {
+          console.log("prs = "+purchaserequests);
+          console.log("length = "+purchaserequests.length);
+          console.log("pr = "+purchaserequests[0]);
+          this.purchaserequest = purchaserequests[0];
+          console.log("pr2 = "+this.purchaserequest);
+          this.purchaserequest = purchaserequests.length>0? purchaserequests[0]:null;
+        });
       });
-      
+      console.log("pr.......:", this.purchaserequest);
       this.productSvc.list().subscribe(products => 
                                        {this.products = products;
       })
   }
-Create(){
+create(){
     
     this.prli.PurchaseRequest = this.purchaserequest;
     	console.log('prli service create...');

@@ -12,7 +12,7 @@
 <div *ngIf='purchaserequest'>
     <div class="form-group row">
       <label class='col-form-label col-sm-2' for="user">User:</label>
-      <input [(ngModel)]='purchaserequest.User.UserName' name = 'UserName' type="text" class="form-control col-sm-6" id="purchaserequestuser" aria-describedby="userHelp" placeholder="User">
+      <input [(ngModel)]='purchaserequest.User.UserName' name = 'Name' type="text" class="form-control col-sm-6" id="purchaserequestuser" aria-describedby="userHelp" placeholder="User">
       <small id="userHelp" class="form-text text-muted col-sm-2">User name</small>
         </div>   
         
@@ -30,43 +30,28 @@
     
     <div class="form-group row">
       <label class='col-form-label col-sm-2' for="purchaserequestdateneeded">Date needed:</label>
-      <input [(ngModel)]='purchaserequest.dateneeded' name = 'dateneeded' type="text" class="form-control col-sm-6" id="dateneeded" aria-describedby="dateneededHelp" placeholder="dateneeded">
+      <input [(ngModel)]='purchaserequest.DateNeeded' name = 'dateneeded' type="text" class="form-control col-sm-6" id="dateneeded" aria-describedby="dateneededHelp" placeholder="dateneeded">
       <small id="dateneededHelp" class="form-text text-muted col-sm-2">purchaserequest's dateneeded</small>
     </div>
     
     <div class="form-group row">
-      <label class='col-form-label col-sm-2' for="deliveryMode">Delivery Mode:</label>
+      <label class='col-form-label col-sm-2' for="deliverymode">Delivery Mode:</label>
       <input [(ngModel)]='purchaserequest.DeliveryMode' name = 'DeliveryMode' type="text" class="form-control col-sm-6" id="deliveryMode" aria-describedby="deliveryModeHelp" placeholder="DeliveryMode">
       <small id="phoneHelp" class="form-text text-muted col-sm-2">purchaserequest's Delivery Mode</small>
     </div>
     
     <div class="form-group row">
-      <label class='col-form-label col-sm-2' for="status">Status:</label>
-      <input [(ngModel)]='purchaserequest.Status' name = 'Status' type="text" class="form-control col-sm-6" id="status" aria-describedby="statusHelp" placeholder="Status">
-      <small id="statusHelp" class="form-text text-muted col-sm-2">purchaserequest's Status</small>
-    </div>
-    
-    <div class="form-group row">
-      <label class='col-form-label col-sm-2' for="purchaserequestTotal">Reviewer:</label>
-      <input [(ngModel)]='purchaserequest.Reviewer' name = 'Total' type="checkbox" class="form-control col-sm-6" id="purchaserequestTotal" aria-describedby="totalHelp" placeholder="Reviewer">
+      <label class='col-form-label col-sm-2' for="purchaserequesttotal">Total:</label>
+      <input [(ngModel)]='purchaserequest.Total' name = 'Total' type="checkbox" class="form-control col-sm-6" id="purchaserequestTotal" aria-describedby="totalHelp" placeholder="Total">
       <small id="totalHelp" class="form-text text-muted col-sm-2">Total </small>
     </div>
     
     <div class="form-group row">
-      <label class='col-form-label col-sm-2' for="submittedDate">SubmittedDate:</label>
+      <label class='col-form-label col-sm-2' for="submittedDate">Submitted Date:</label>
       <input [(ngModel)]='purchaserequest.SubmittedDate' name = 'SubmittedDate' type="text" class="form-control col-sm-6" id="submittedDate" aria-describedby="submittedDateHelp" placeholder="SubmittedDate">
       <small id="submittedDateHelp" class="form-text text-muted col-sm-2">purchaserequest's SubmittedDate</small>
     </div>
-    
-    
-    <div class="form-group row">
-      <label class='col-form-label col-sm-2' for="reasonForRejection">Reviewer:</label>
-      <input [(ngModel)]='purchaserequest.Reviewer' name = 'ReasonForRejection' type="checkbox" class="form-control col-sm-6" id="ReasonForRejection" aria-describedby="reasonForRejectionHelp" placeholder="Reviewer">
-      <small id="reasonForRejectionHelp" class="form-text text-muted col-sm-2">ReasonForRejection </small>
-    </div>
-    
-    
-    
+        
     <div class='form-group'>
       <button (click)='create()' class='btn btn-primary'>Create</button>
     </div>

@@ -21,9 +21,9 @@ export class PurchaseRequestLineItemEditComponent implements OnInit {
     title: string = 'PurchaseRequestLineItem Edit';
     id: string;
     resp: any;
-    prli: PurchaseRequestLineItem;
+    purchaserequestlineitem: PurchaseRequestLineItem;
     
-    requests: PurchaseRequest[];
+    purchaserequests: PurchaseRequest[];
     products: Product[];
     
     
@@ -36,17 +36,17 @@ export class PurchaseRequestLineItemEditComponent implements OnInit {
 
   ngOnInit() {
       this.route.params.subscribe(parms=> this.id=parms['id']);
-      this.prSvc.list().subscribe(requests => this.requests = requests);
+      this.prSvc.list().subscribe(purchaserequests => this.purchaserequests = purchaserequests);
       this.productSvc.list().subscribe(products => this.products = products);
       this.prliSvc.get(this.id)
-      .subscribe(prlis=>{
-          this.prli=prlis.length>0? prlis[0]:null;
-          console.log(this.prli);
+      .subscribe(purchaserequestlineitems=>{
+          this.purchaserequestlineitem=purchaserequestlineitems.length>0? purchaserequestlineitems[0]:null;
+          console.log(this.purchaserequestlineitem);
       })
   }
-Change(){
-    console.log(this.prli);
-    this.prliSvc.change(this.prli)
+change(){
+    console.log(this.purchaserequestlineitem);
+    this.prliSvc.change(this.purchaserequestlineitem)
     .subscribe(resp=> {
         this.resp=resp;
         console.log("PurchaseRequestLineItem-Change:", this.resp);

@@ -13,8 +13,8 @@ export class PurchaseRequest {
     ReasonForRejection: string;
     
 
-    constructor( Id: number=0, user: User = null, dsc: string = '', jst: string = '',  dneeded: Date = null, dlvmode: string = '', status: string='', total: number = null, dsubmitted: Date = null, rfrejection: string=''){
-    
+    constructor( Id: number=0, user: User = null, dsc: string = '', jst: string = '',  dneeded: Date = null, dlvmode: string = '', status: string='', total: number = 0, dsubmitted: Date = null, rfrejection: string=''){
+        this.Id=Id;
         this.User= user;
 		this.Description = dsc;
 		this.Justification = jst;

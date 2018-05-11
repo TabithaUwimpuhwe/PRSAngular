@@ -1,13 +1,13 @@
 <app-menu></app-menu>
 <div class='component-content'>
 	<div>
-		<span class='component-title'  *ngIf='purchaseRequest'>{{title}} - PR ID:{{purchaseRequest.Id} </span> 
+		<span class='component-title'  *ngIf='purchaserequest'>{{title}} - PR ID:{{purchaserequest.Id}} </span> 
 		<span><a routerLink='/productrequestlineitem/list'>Back to list</a></span>
 	</div>
 	
-	<p *ngIf='!purchaserequestlineitem'>Loading ...</p>
+	<p *ngIf='!prli'>Loading ...</p>
 
-	<div *ngIf='purchaserequestlineitem'>
+	<div *ngIf='prli'>
 		<div class='form-group row' >
 		    <label class='col-form-label col-sm-2' for="purchaserequestProductID"> Product </label>
 			<div class=' col-sm-6'>

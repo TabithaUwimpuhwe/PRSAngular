@@ -29,6 +29,7 @@ export class UserEditComponent implements OnInit {
           console.log(this.user);
       })
   }
+    
 Change(){
     console.log(this.user);
     this.userSvc.change(this.user)
@@ -36,6 +37,6 @@ Change(){
         this.resp=resp;
         console.log("User-Change:", this.resp);
         this.router.navigate(['/user/list']);
-    })
+    });
 }
 }

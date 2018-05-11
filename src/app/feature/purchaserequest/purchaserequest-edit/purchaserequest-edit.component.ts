@@ -32,4 +32,13 @@ title: string = 'PurchaseRequest Edit'
       })
   }
 
+Change(){
+    console.log(this.purchaserequest);
+    this.prSvc.change(this.purchaserequest)
+    .subscribe(resp=> {
+        this.resp=resp;
+        console.log("PurchaseRequest-Change:", this.resp);
+        this.router.navigate(['/purchaserequest/list']);
+    });
+}
 }

@@ -34,12 +34,14 @@ import { PurchaseRequestListComponent } from './feature/purchaserequest/purchase
 import { PurchaseRequestLinesComponent } from './feature/purchaserequest/purchaserequest-lines/purchaserequest-lines.component';
 import { PurchaseRequestService } from './service/purchaserequest.service';
 
+
 import {PurchaseRequestLineItemCreateComponent } from './feature/purchaserequestlineitem/purchaserequestlineitem-create/purchaserequestlineitem-create.component';
 import {PurchaseRequestLineItemEditComponent } from './feature/purchaserequestlineitem/purchaserequestlineitem-edit/purchaserequestlineitem-edit.component';
 import { PurchaseRequestLineItemService } from './service/purchaserequestlineitem.service';
 
 import { SystemService } from './service/system.service';
 import { SortPipe } from './pipe/sort.pipe';
+import { PurchaseRequestReviewComponent } from './feature/purchaserequest/purchaserequest-review/purchaserequest-review.component';
 
 
 @NgModule({
@@ -71,7 +73,8 @@ import { SortPipe } from './pipe/sort.pipe';
     PurchaseRequestLineItemEditComponent,
    
     PurchaseRequestLinesComponent,
-    SortPipe
+    SortPipe,
+    PurchaseRequestReviewComponent
   ],
   imports: [
     BrowserModule,

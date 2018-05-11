@@ -31,8 +31,14 @@
     </div>
     
     <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="vendorcity">Vendor state:</label>
+      <input [(ngModel)]='vendor.City' name = 'city' type="text" class="form-control col-sm-6" id="state" aria-describedby="cityHelp" placeholder="city">
+      <small id="cityHelp" class="form-text text-muted col-sm-2">vendor's city</small>
+    </div>
+    
+    <div class="form-group row">
       <label class='col-form-label col-sm-2' for="vendorstate">Vendor state:</label>
-      <input [(ngModel)]='vendor.state' name = 'state' type="text" class="form-control col-sm-6" id="state" aria-describedby="stateHelp" placeholder="state">
+      <input [(ngModel)]='vendor.State' name = 'state' type="text" class="form-control col-sm-6" id="state" aria-describedby="stateHelp" placeholder="state">
       <small id="stateHelp" class="form-text text-muted col-sm-2">vendor's state</small>
     </div>
     

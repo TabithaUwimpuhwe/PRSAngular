@@ -16,25 +16,21 @@ import { Product } from '../../../model/product';
 })
 export class PurchaseRequestLinesComponent implements OnInit {
 
-  title: string = 'PurchaseRequestLineItems';
+    title: string = 'PurchaseRequestLineItems';
 	id: string;
     prliId: string = '0';
 	purchaserequest: PurchaseRequest;
 	lines: PurchaseRequestLineItem[];
 	resp;
 
-	remove() {
-    this.purchaserequestSvc.remove(this.purchaserequest)
-      .subscribe(resp => {
-        this.resp = resp;
-        console.log("PurchaseRequest-Lines-Remove:", this.resp);
-        this.router.navigate(['/purchaserequest/list']);
-      });
 
-	}
+constructor(private prSvc: PurchaseRequestService,
+  		    private prliSvc: PurchaseRequestLineItemService,
+  		    private router: Router,
+  		    private route: ActivatedRoute) { }
 
-  submitForReview() {
-    this.purchaserequestSvc.submitForReview(this.purchaserequest)
+    submitForReview() {
+    this.prSvc.submitForReview(this.purchaserequest)
       .subscribe(resp => {
         this.resp = resp;
         console.log("PurchaseRequest-Lines-SubmitForReview:", this.resp);
@@ -42,23 +38,26 @@ export class PurchaseRequestLinesComponent implements OnInit {
       });
 
   }
-
-	constructor(      private purchaserequestSvc: PurchaseRequestService,
-  		private PurchaseRequestLineItemSvc: PurchaseRequestLineItemService,
-  		private router: Router,
-  		private route: ActivatedRoute) { }
-
+    
   ngOnInit() {
   	this.route.params.subscribe(parms => this.id = parms['id']);
-  	this.purchaserequestSvc.get(this.id)
+    this.route.params.subscribe(parms => this.prliId = parms['del']);
+  	this.prSvc.get(this.id)
   		.subscribe(purchaserequests => {
         this.purchaserequest = purchaserequests.length > 0 ? purchaserequests[0] : null;
-        console.log('PR:');
-        console.log(this.purchaserequest);
+        
+    console.log('PR:');
+    console.log(this.purchaserequest);
       }
     );
+       // if 'del' param is present, delete the prli by the id passed into 'del' param
+//    if (this.prliId!='0') {
+//      console.log("calling remove...");
+//      this.remove();
+//    }
+      
     console.log('Calling PR LineItems...');
-  	this.PurchaseRequestLineItemSvc.listByPR(this.id)
+  	this.prliSvc.listByPR(this.id)
   		.subscribe(prlis => {
         this.lines = prlis;
         // set temp variable to build everything then set that to lines
@@ -67,8 +66,19 @@ export class PurchaseRequestLinesComponent implements OnInit {
         console.log(this.lines);
         console.log(this.lines.length);
       }
-    );
+    );   
   }
-
+    
+//	remove(): void {
+//    this.prliSvc.remove(this.prliId)
+//      .subscribe(res => {
+//        console.log(res);
+//        this.router.navigateByUrl("/purchaserequest/lines/"+this.id);
+//      });
+//  }
+  
+  doThis(id: number): void {
+    console.log("doThis called... #="+id);
+  }
 
 }

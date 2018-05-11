@@ -46,8 +46,6 @@
 				<td *ngIf='prline.Product'>{{prline.Product.Price | currency}}</td>
 				<td *ngIf='prline.Product'>{{prline.Product.Price * prline.Quantity | currency}}</td>
 				<td>
-					<a routerLink='/purchaserequestlineitem/detail/{{prline.Id}}/{{purchaserequest.Id}}'>
-							<img width='20' height='20' src='assets/details.png'></a>
 					<a routerLink='/purchaserequestlineitem/edit/{{prline.Id}}/{{purchaserequest.Id}}'>
 							<img width='20' height='20' src='assets/pencil-icon.png'></a>
 				</td>

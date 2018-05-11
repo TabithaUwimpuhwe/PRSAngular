@@ -14,9 +14,9 @@ import {SystemService} from '../../../service/system.service';
 export class PurchaseRequestListComponent implements OnInit {
 
     title: string = 'PurchaseRequest List';
-   purchaserequests: PurchaseRequest[]=[];
-    //moch ligin user
-    user:User
+    purchaserequests: PurchaseRequest[]=[];
+    user: User;
+    sortBy: string = "Id";
     
     
   constructor(private userSvc: UserService,
@@ -33,17 +33,25 @@ export class PurchaseRequestListComponent implements OnInit {
         console.log(prs);
   	});
     // mock login - hardcoded for now for testing purposes
-    this.userSvc.login("sblessing", "login")
-      .subscribe(users => {
-        if(users.length > 0) {
-			this.user = users[0];
-            this.sysSvc.data.user.instance = this.user;
-            this.sysSvc.data.user.loggedIn = true;
-            console.log("SysSvc:", this.sysSvc.debug);
-            
-        }
-    })
+//    this.userSvc.login("sblessing", "login")
+//      .subscribe(users => {
+//        if(users.length > 0) {
+//			this.user = users[0];
+//            this.sysSvc.data.user.instance = this.user;
+//            this.sysSvc.data.user.loggedIn = true;
+//            console.log("SysSvc:", this.sysSvc.debug);
+//            
+//        }
+//    })
   }     
-      
+//   populateUserName(): void {
+//    for (let pr of this.purchaserequests) {
+//      pr.User=pr.User.UserName;
+//    }
+//  }
+    
+  setSortBy(column: string): void {
+    this.sortBy = column;
+  }   
   }
 

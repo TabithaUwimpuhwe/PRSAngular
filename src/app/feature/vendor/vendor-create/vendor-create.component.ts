@@ -11,7 +11,7 @@ import {VendorService} from '../../../service/vendor.service';
 export class VendorCreateComponent implements OnInit {
 
     title: string ="Vendor Create";
-    vendor: Vendor = new Vendor(0, '', '', '','', '', '', '', false);
+    vendor: Vendor = new Vendor(0, '', '','', '','', '', '', '', false);
     resp: any;
     
     create (){

@@ -38,3 +38,4 @@ Change(){
         this.router.navigate(['/vendor/list']);
     });
 }
+}

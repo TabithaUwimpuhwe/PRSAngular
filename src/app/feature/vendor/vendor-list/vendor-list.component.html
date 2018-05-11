@@ -14,13 +14,13 @@
 <table class="table table-sm" *ngIf='vendors'> 
 <!--the entire table tags - above is bootstrap to separate the below list-->
 <tr>
-    <td>ID</td> <td>Code</td> <td>Name</td> <td>Address</td><td>State</td> <td>Zip</td> <td>Phone Number</td> <td>Email</td><td>Privilege</td>
+    <td>ID</td> <td>Code</td> <td>Name</td> <td>Address</td><td>City</td><td>State</td> <td>Zip</td> <td>Phone Number</td> <td>Email</td><td>Privilege</td>
 </tr>
 
 <tr *ngFor='let vendor of vendors'>
 <!--   for every vendor of vendirs list prints to the screen-->
    <td>{{vendor.Id}} </td> <td>{{vendor.Code}} </td> 
-    <td>{{vendor.Name}} </td> <td>{{vendor.Address}} </td> <td>{{vendor.State}} </td><td>{{vendor.Zip}}</td> <td>{{vendor.PhoneNumber}} </td><td>{{vendor.Email}} </td> <td>{{vendor.Preapproved}} </td> 
+    <td>{{vendor.Name}} </td> <td>{{vendor.Address}} </td><td>{{vendor.City}} </td> <td>{{vendor.State}} </td><td>{{vendor.Zip}}</td> <td>{{vendor.PhoneNumber}} </td><td>{{vendor.Email}} </td> <td>{{vendor.Preapproved}} </td> 
     <td class='actions'></td>
     <a routerLink='/vendor/detail/{{vendor.Id}}'><img src='assets/details.png' width='20' height='20' title='Detail'></a> 
     <a routerLink='/vendor/edit/{{vendor.Id}}'><img src='assets/pencil-icon.png' width='20' height='20' title='Edit'></a>
