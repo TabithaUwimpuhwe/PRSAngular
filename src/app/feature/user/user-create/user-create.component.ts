@@ -9,9 +9,11 @@ import {UserService} from '../../../service/user.service';
   styleUrls: ['./user-create.component.css']
 })
 export class UserCreateComponent implements OnInit {
+    //must match what is declared in model/user.ts
     title: string ="User Create";
     user: User = new User(0, '', '', '','', '', '', false, false);
     resp: any;
+    
     
     create (){
         console.log('create a user...');
@@ -24,7 +26,7 @@ export class UserCreateComponent implements OnInit {
         });
     }
     
-
+//import userService and Router to connect to UI
   constructor(private userSvc: UserService,
                private router: Router) { }
 

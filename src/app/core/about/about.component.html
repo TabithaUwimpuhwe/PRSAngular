@@ -1,4 +1,67 @@
 <app-menu></app-menu>
- <p>
-  about works!
-</p>
+<div class = "contentBox">
+	<div class = "Box">
+		<h1><span id="barcode"> -------------</span>{{title}}</h1>
+		<div class="scrollbox">
+			<h1 class="aboutNav">
+				<ul>
+					<li *ngFor='let abt of aboutMenu' title='{{abt.tooltip}}'><a routerLink='{{abt.href}}'>{{abt.display}}</a></li>
+				</ul>
+			</h1>
+           <table class="table table-sm">
+               
+               <tr>
+					<th> 
+			     <img src="../../../assets/About-info-icon.png" height="100px" width="150px">
+                    </th>
+                    <td>            
+			The Purchase Request Sytem is the capstone project for the Spring of 2018 Java Bootcamp at Max Techinical Training for the Cincy CodeIT program. It represents all technologies we have learned in this 11-weeks bootcamp from database (mySQL), to backend: Java, Maven, Spring boot, and finally to frontend: JavaScript, Typescript to Angular. This is a full-stack developers language specializing in the Java language.    
+            Any small to medium company can use this type of application to have their employees make orders for different things such as office supplies, chairs, computers or anything a new or an existing employee may need for work. In brief, it is a real life scenario application.
+            Now days, about 42% of business use manual excel spreadsheets to truck their employees spending. That process is hard to keep track of what has been ordered, to budget and to make changes to orders. PRS comes in to give visibility to all purchasing transactions and their approvals and to also help control budget. Without purchase orders tracking expenses is more difficult, prone to errors and validating delivery reports becomes difficult.       
+               	    </td>
+				</tr>
+
+				<tr>
+					<th>
+						<img src="../../../assets/mySQL.png" height="100px" width="150px">
+					</th>
+					<td>
+						MySQL is a flavor of SQL (Structured Query Language) that we used to create our database to store all of our information that was later to be called at will from the rest of the back end via maven dependencies. The database information later rendered to the browser via the Spring boot controller class, which connects it to frontend via Angular by the help of RESTful API.
+					</td>
+				</tr>
+				<tr>
+					<th>
+						<img src="./assets/java-logo.jpeg" height="100px" width="150px">
+					</th>
+					<td>
+						Java, originally developed in 1994 by Sun MicroSystems, is a robust object-oriented programming language that is similar to the C++ family of programming language.  We utilized Java 8 and 9 in the Spring boot framework.
+					</td>
+				</tr>
+				<tr>
+					<th>
+						<img src="../../../assets/maven.png" height="100px" width="150px">
+					</th>
+					<td>
+						Maven is a dependency management system that we utilized to manage the many dependencies that our program needs in order to run and speak effectively with our database, as well as any other technology that is called within our Spring Framework.  While we only studied Maven in this course, we have a solid foundation in dependency management, and could easily adapt to different dependency management systems such as Gradle.
+					</td>
+				</tr>
+				<tr>
+					<th>
+						<img src="../../../assets/restful-api-kotlin-spring-boot.jpg" height="100px" width="150px">
+					</th>
+					<td>
+						RESTful web services (Representational State Transfer) are a back end technology that allows an active server to remain constantly running, waiting patiently for a call to be made to it.  When the call is made, the server efficiently and quickly makes the transfer of data without having to spin up.  This tool allow us to make a call to our database much faster from our back end.
+					</td>
+				</tr>
+				<tr>
+					<th>
+						<img src="./assets/springboot.png" height="100px" width="150px">
+					</th>
+					<td>
+						Spring is a massive back end framework that makes the construction of a back end more efficient.  Through Spring Boot, Web, and MVC, our back end is able to manage calls and retrieval from our database without having to explicitly manage things like JPA, and ORM (Object Relation Mapping) programs such as Hibernate are managed within it as well.
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
